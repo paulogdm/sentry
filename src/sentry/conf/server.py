@@ -78,6 +78,11 @@ INTERNAL_IPS = ()
 # List of IP subnets which should not be accessible
 SENTRY_DISALLOWED_IPS = ()
 
+# When resolving DNS for external sources (source map fetching, webhooks, etc),
+# ensure that domains are fully resolved first to avoid poking internal
+# search domains.
+SENTRY_ENSURE_FQDN = False
+
 # Hosts that are allowed to use system token authentication.
 # http://en.wikipedia.org/wiki/Reserved_IP_addresses
 INTERNAL_SYSTEM_IPS = (
@@ -893,6 +898,8 @@ SENTRY_FEATURES = {
     # Enable graph for subscription quota for errors, transactions and
     # attachments
     "organizations:usage-stats-graph": False,
+    # Enable dynamic issue counts and user counts in the issue stream
+    "organizations:dynamic-issue-counts": False,
     # Enable functionality to specify custom inbound filters on events.
     "projects:custom-inbound-filters": False,
     # Enable data forwarding functionality for projects.
