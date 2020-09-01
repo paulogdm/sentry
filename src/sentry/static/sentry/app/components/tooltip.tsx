@@ -7,7 +7,9 @@ import styled from '@emotion/styled';
 import memoize from 'lodash/memoize';
 
 import {domId} from 'app/utils/domId';
-import {IS_CI} from 'app/constants';
+//import {IS_CI} from 'app/constants';
+
+const IS_CI = true;
 
 const IS_HOVERABLE_DELAY = 50; // used if isHoverable is true (for hiding AND showing)
 
